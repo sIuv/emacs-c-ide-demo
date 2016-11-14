@@ -4,17 +4,19 @@
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
+(setq line-number-mode t)
+(setq column-number-mode t)
+
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; custom themes
-(load-theme 'tango-dark)
+(use-package spacemacs-theme
+  :defer t
+  :init (load-theme 'spacemacs-dark t))
 
 ;; auto revert mode
 (global-auto-revert-mode 1)
-
-;; custom themes
-(load-theme 'tango-dark)
 
 ;; show unncessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook

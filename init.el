@@ -1,7 +1,8 @@
 (require 'package)
 (add-to-list 'package-archives
-         '("melpa" . "http://melpa.org/packages/") t)
-
+             '("melpa" . "https://melpa.org/packages/"))
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -19,13 +20,13 @@
 (if (version< emacs-version "24.4")
     (require 'setup-ivy-counsel)
     (require 'setup-helm)
-;;    (require 'setup-helm-gtags)
+    (require 'setup-helm-gtags)
   )
 
-(require 'setup-ggtags)
+;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
-
+(require 'setup-org)
 
 
 ;; function-args
@@ -38,9 +39,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu magit editorconfig ggtags))))
+    (zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu magit editorconfig spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
