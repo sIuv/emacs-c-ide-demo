@@ -1,3 +1,4 @@
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
@@ -5,6 +6,15 @@
 (setq inhibit-startup-message t)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; custom themes
+(load-theme 'tango-dark)
+
+;; auto revert mode
+(global-auto-revert-mode 1)
+
+;; custom themes
+(load-theme 'tango-dark)
 
 ;; show unncessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook
