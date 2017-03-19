@@ -12,5 +12,4 @@ Emacs demo setup for C/C++ describe here: http://tuhdo.github.io/c-ide.html
 
 And finally clone this repo:
 
-1. cd ~/
-2. git clone https://github.com/sIuv/emacs-config.git .emacs-d/
+cd ~/ && git clone https://github.com/sIuv/emacs-config.git .emacs.d/
